@@ -210,7 +210,7 @@ UserSchema.methods = {
   authenticate: function(plainText) {
     return this.hashPassword(plainText) === this.hashed_password;
   },
-  
+
   /**
    * Send notification to this user
    * @param  {Object} data   The data containing notification infp
@@ -273,19 +273,19 @@ UserSchema.methods = {
        */
       if (!thisUser.socketId && !fullData.config.avoidEmail) {
         console.log(thisUser.name, 'is notified via email.');
-        // 'Hi ' + user.name + ', you\'ve got a new notification on AtWork!<br><br>Check it out here: ' + '<a href="http://localhost:8111/post/' + data.postId + '">View</a>' // html body
-        
+        // 'Hi ' + user.name + ', you\'ve got a new notification on Lyre!<br><br>Check it out here: ' + '<a href="http://localhost:8111/post/' + data.postId + '">View</a>' // html body
+
         var msg = '';
 
         switch (fullData.notificationType) {
           case 'like':
           msg = fullData.actor.name + ' has liked a post';
           break;
-          
+
           case 'comment':
           msg = fullData.actor.name + ' has commented on a post';
           break;
-          
+
           case 'follow':
           msg = fullData.actor.name + ' is now following you';
           break;
@@ -391,7 +391,7 @@ UserSchema.methods = {
 
   /**
    * Hide security sensitive fields
-   * 
+   *
    * @returns {*|Array|Binary|Object}
    */
   toJSON: function() {

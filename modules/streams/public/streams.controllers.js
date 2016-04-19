@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('atwork.streams')
+angular.module('lyre.streams')
   .controller('StreamsPurposeCtrl', [
     '$scope',
     '$rootScope',

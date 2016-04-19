@@ -9,7 +9,7 @@ var fs = require('fs');
 var mongoose = require('mongoose');
 var Config = require('./config/' + (process.env.NODE_ENV || 'development'));
 var bodyParser = require('body-parser');
-var multer = require('multer'); 
+var multer = require('multer');
 var morgan = require('morgan');
 var path = require('path');
 var nodemailer = require('nodemailer');
@@ -69,7 +69,7 @@ function startServer() {
     var host = server.address().address
     var port = server.address().port
 
-    console.log('AtWork running at http://%s:%s', host, port);
+    console.log('Lyre running at http://%s:%s', host, port);
   });
 }
 
@@ -191,7 +191,7 @@ var loadModules = function(System, callback) {
   list.forEach(function(folder) {
     var serverPath = modulePath + '/' + folder + '/server';
     var publicPath = moduleURL + '/' + folder;
-    
+
     /**
      * Expose public paths
      */
@@ -217,7 +217,7 @@ var loadModules = function(System, callback) {
   requires.map(function(module) {
     module(System);
   });
-  
+
   callback();
 };
 
@@ -272,7 +272,7 @@ module.exports = {
      * Load the helpers
      */
     loadPlugins(__dirname, this);
-    
+
     /**
      * Finally, load dependencies and start the server
      */
@@ -297,7 +297,7 @@ module.exports = {
   mailer: {},
 
   /**
-   * Wrapping the server's route function 
+   * Wrapping the server's route function
    * @param  {Array} routes The array of routes
    * @return {Void}
    */

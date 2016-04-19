@@ -7,7 +7,7 @@
   describe('System', function() {
     describe('SystemServices', function() {
       beforeEach(function() {
-        module('atwork.system');
+        module('lyre.system');
       });
 
       // Initialize the controller and a mock scope
@@ -41,7 +41,7 @@
       });
       it('Service tokenHttpInterceptor should be available', function() {
           expect(tokenHttpInterceptor).to.be.a('object');
-          
+
           var config = {headers: {}};
           appStorage.set('userToken', 'sample token');
           config = tokenHttpInterceptor.request(config);

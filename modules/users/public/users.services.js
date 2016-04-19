@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('atwork.users')
+angular.module('lyre.users')
   .factory('appUsers', ['$resource',
     function($resource) {
       return {

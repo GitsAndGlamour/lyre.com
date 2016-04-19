@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('atwork.streams')
+angular.module('lyre.streams')
   .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/stream/:streamId', {

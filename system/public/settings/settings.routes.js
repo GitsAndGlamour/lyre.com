@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('atwork.settings')
+angular.module('lyre.settings')
   .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/settings', {

@@ -25,7 +25,7 @@ module.exports = function(System) {
         }
       });
     };
-    
+
     socket.on('online', function(data) {
       User.findOne({token: data.token}, function(err, user) {
         if (user) {
@@ -38,7 +38,7 @@ module.exports = function(System) {
         }
       });
     });
-    
+
     socket.on('disconnect', clearSocket);
     socket.on('logout', clearSocket);
 
@@ -63,7 +63,7 @@ module.exports = function(System) {
    * Create / register a new user
    * @param  {Object} req Request
    * @param  {Object} res Request
-   * @return {Void}     
+   * @return {Void}
    */
   obj.create = function(req, res) {
     /**
@@ -139,7 +139,7 @@ module.exports = function(System) {
       if (!isValidEmail) {
         return json.unhappy({message: 'Invalid email. Remember to use your team address.'}, res);
       }
-      
+
 
       /**
        * Add the user
@@ -207,7 +207,7 @@ module.exports = function(System) {
       return json.happy(user, res);
     });
   };
-  
+
   /**
    * Check if the user credentials are valid
    * @param  {Object} req Request
@@ -259,7 +259,7 @@ module.exports = function(System) {
    * List all users
    * @param  {Object} req Request
    * @param  {Object} res Response
-   * @return {Void}     
+   * @return {Void}
    */
   obj.list = function(req, res) {
     //TODO: pagination
@@ -383,12 +383,12 @@ module.exports = function(System) {
    * Follow a user not already following
    * @param  {Object} req Request
    * @param  {Object} res Response
-   * @return {Void}     
+   * @return {Void}
    */
   obj.follow = function(req, res) {
     var currUser = req.user;
     var toFollow = req.param('userId');
-    
+
     var already = req.user.following.filter(function(item) {
       return item.username === toFollow;
     }).length;
@@ -422,7 +422,7 @@ module.exports = function(System) {
    * Stop following an already following user
    * @param  {Object} req Request
    * @param  {Object} res Response
-   * @return {Void}     
+   * @return {Void}
    */
   obj.unfollow = function(req, res) {
     var currUser = req.user;
@@ -456,7 +456,7 @@ module.exports = function(System) {
    * Upload a user's face
    * @param  {Object} req Request
    * @param  {Object} res Response
-   * @return {Void}     
+   * @return {Void}
    */
   obj.avatar = function(req, res) {
     var user = req.user;
@@ -477,7 +477,7 @@ module.exports = function(System) {
 
     var fs = require('fs');
     var AWS = require('aws-sdk');
-    
+
     /**
      * Config params stored in the environment
      * @type {String}
@@ -490,7 +490,7 @@ module.exports = function(System) {
      * @type {Object}
      */
     var params = {
-      Bucket: 'atwork', 
+      Bucket: 'lyre',
       Key: filename,
       Body: fs.readFileSync(file.path),
       ContentType: 'application/image',
@@ -512,7 +512,7 @@ module.exports = function(System) {
      * Update the user with the s3 path, even if its not yet uploaded
      * @type {String}
      */
-    user.face = 'https://s3.amazonaws.com/atwork/' + filename;
+    user.face = 'https://s3.amazonaws.com/lyre/' + filename;
     user.save();
 
     /**
@@ -529,7 +529,7 @@ module.exports = function(System) {
    * Return a single user as json
    * @param  {Object} req Request
    * @param  {Object} res Response
-   * @return {Void}     
+   * @return {Void}
    */
   obj.single = function(req, res) {
     /**
@@ -571,7 +571,7 @@ module.exports = function(System) {
    * Return a single user's notification
    * @param  {Object} req Request
    * @param  {Object} res Response
-   * @return {Void}     
+   * @return {Void}
    */
   obj.notifications = function(req, res) {
     User.findOne({_id: req.user._id, 'notifications.unread': true})
@@ -601,7 +601,7 @@ module.exports = function(System) {
    * Return a single user's notification
    * @param  {Object} req Request
    * @param  {Object} res Response
-   * @return {Void}     
+   * @return {Void}
    */
   obj.markRead = function(req, res) {
     User.findOne({_id: req.user._id, 'notifications.unread': true})
@@ -636,7 +636,7 @@ module.exports = function(System) {
    * Self as json
    * @param  {Object} req Request
    * @param  {Object} res Response
-   * @return {Void}     
+   * @return {Void}
    */
   obj.me = function(req, res) {
     if (req.user) {

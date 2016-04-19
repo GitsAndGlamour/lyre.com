@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('atwork.settings')
+angular.module('lyre.settings')
   .factory('appSettings', [
     '$resource',
     '$rootScope',
@@ -38,6 +38,5 @@ angular.module('atwork.settings')
       }
     }
   ])
-  
+
   ;
-  

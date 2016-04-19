@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('atwork.notifications')
+angular.module('lyre.notifications')
   .factory('appNotification', [
     '$resource',
     '$mdToast',
@@ -23,9 +23,9 @@ angular.module('atwork.notifications')
           });
           if (window.fluid) {
             window.fluid.showGrowlNotification({
-                title: "Atwork", 
-                description: data.message, 
-                priority: 1, 
+                title: "Lyre", 
+                description: data.message,
+                priority: 1,
                 sticky: false,
                 identifier: "foo",
                 onclick: function() {
@@ -49,11 +49,11 @@ angular.module('atwork.notifications')
           case 'like':
           msg = actor.name + ' has liked a post';
           break;
-          
+
           case 'comment':
           msg = actor.name + ' has commented on a post';
           break;
-          
+
           case 'follow':
           msg = actor.name + ' is now following you';
           break;
@@ -67,4 +67,3 @@ angular.module('atwork.notifications')
     }
   ])
   ;
-  

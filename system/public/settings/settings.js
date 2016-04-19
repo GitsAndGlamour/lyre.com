@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('atwork.settings', []);
+angular.module('lyre.settings', []);

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('atwork.activities')
+angular.module('lyre.activities')
   .controller('ActivitiesCtrl', [
     '$scope',
     '$rootScope',

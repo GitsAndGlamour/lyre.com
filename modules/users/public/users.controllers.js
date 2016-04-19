@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('atwork.users')
+angular.module('lyre.users')
   .controller('ActivationCtrl', [
     '$rootScope',
     '$scope',
@@ -156,7 +156,7 @@ angular.module('atwork.users')
       $scope.changePassword = function() {
         appLocation.url('/profile/' + appAuth.getUser().username + '/change-password');
       };
-      
+
       /**
        * Cancel profile editing
        * @return {Void}
@@ -341,7 +341,7 @@ angular.module('atwork.users')
       angular.extend($scope, resolvedFeeds.config);
       doUpdate(resolvedFeeds);
       // $scope.updateFeed();
-      
+
     }
   ])
   .controller('InviteCtrl', [
@@ -461,7 +461,7 @@ angular.module('atwork.users')
              * @type {Object}
              */
             $scope.registeredUserId = response.res._id;
-            
+
             if (response.success) {
               if (response.res && response.res.record && response.res.record.active) {
                 $scope.postLogin(response.res.record, response.res.token);
@@ -589,14 +589,14 @@ angular.module('atwork.users')
     'appStorage',
     function($scope, $mdBottomSheet, $location, appStorage) {
       $scope.items = [
-        { 
+        {
           name: 'Profile',
           icon: 'fa-user',
           handler: function() {
             $location.url('/profile/' + angular.fromJson(appStorage.get('user')).username);
           }
         },
-        { 
+        {
           name: 'Logout',
           icon: 'fa-sign-out',
           handler: function() {

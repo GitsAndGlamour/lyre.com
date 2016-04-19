@@ -1,5 +1,5 @@
 'use strict';
-angular.module('atwork.notifications')
+angular.module('lyre.notifications')
 .controller('notificationsCtrl', [
   '$scope',
   '$rootScope',
@@ -26,8 +26,8 @@ angular.module('atwork.notifications')
 
     /**
      * Hide or show notifications box
-     * @param  {Object} $event 
-     * @return {Void}        
+     * @param  {Object} $event
+     * @return {Void}
      */
 		$scope.showUserNotifications = function($event) {
 		  $scope.notificationShown = !$scope.notificationShown;
@@ -52,7 +52,7 @@ angular.module('atwork.notifications')
     };
 
     /**
-     * Get notifications 
+     * Get notifications
      * @return {Void}
      */
     $scope.updateNotifications = function () {

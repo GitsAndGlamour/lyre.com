@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('atwork.activities', ['atwork.system']);
+angular.module('lyre.activities', ['lyre.system']);

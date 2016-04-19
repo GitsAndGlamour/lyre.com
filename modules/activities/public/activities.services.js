@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('atwork.activities')
+angular.module('lyre.activities')
   .factory('appActivities', ['$resource',
     function($resource) {
       return $resource('activities/feed/:userId', {
@@ -9,4 +9,3 @@ angular.module('atwork.activities')
     }
   ])
   ;
-  

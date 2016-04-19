@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('atwork.settings')
+angular.module('lyre.settings')
   .controller('SettingsCtrl', [
     '$scope',
     '$rootScope',

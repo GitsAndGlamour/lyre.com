@@ -1,18 +1,18 @@
-var app = angular.module('AtWork', [
-  'atwork.system', 
-  'atwork.users', 
-  'atwork.posts', 
-  'atwork.streams', 
-  'atwork.chats', 
-  'atwork.activities', 
-  'atwork.notifications', 
-  'atwork.settings', 
+var app = angular.module('Lyre', [
+  'lyre.system',
+  'lyre.users',
+  'lyre.posts',
+  'lyre.streams',
+  'lyre.chats',
+  'lyre.activities',
+  'lyre.notifications',
+  'lyre.settings', 
   'ngMaterial']);
 
 app.controller('AppCtrl', [
-  '$scope', 
+  '$scope',
   '$route',
-  '$rootScope', 
+  '$rootScope',
   '$mdSidenav',
   '$mdBottomSheet',
   '$location',
@@ -89,7 +89,7 @@ app.controller('AppCtrl', [
         $scope.barTitle = $rootScope.systemSettings.tagline;
         $timeout(appSettingsValid);
       });
-      
+
     });
 
     $scope.$on('loggedOut', function() {
@@ -115,7 +115,7 @@ app.controller('AppCtrl', [
         $scope.barTitle = '';
         $scope.$broadcast('loggedIn');
       }
-      
+
     });
   }
 ]);

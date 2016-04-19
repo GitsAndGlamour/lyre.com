@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('atwork.posts')
+angular.module('lyre.posts')
   .controller('PostsCtrl', [
     '$scope',
     '$route',
@@ -119,7 +119,7 @@ angular.module('atwork.posts')
        */
       angular.extend($scope, resolvedFeeds.config);
       doUpdate(resolvedFeeds);
-      
+
 
       /**
        * Check if feed needs to be filtered
@@ -237,7 +237,7 @@ angular.module('atwork.posts')
         } else {
           $scope.mentionsResults = [];
         }
-        
+
         /**
          * Remember the element
          */
@@ -278,10 +278,10 @@ angular.module('atwork.posts')
             content: this.content,
             stream: streamId
           });
-          
+
           post.$save(function(response) {
             if (response.success) {
-              
+
               /**
                * We are the creator ourselves, we know that
                * @type {Object}
@@ -289,7 +289,7 @@ angular.module('atwork.posts')
               response.res = angular.extend(response.res, {
                 creator: appAuth.getUser()
               });
-              
+
               /**
                * Update feed
                * @type {Object}
@@ -303,11 +303,11 @@ angular.module('atwork.posts')
             }
           });
         } else {
-          
+
         }
       };
 
-      
+
     }
   ])
   ;

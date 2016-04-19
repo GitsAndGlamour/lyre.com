@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('atwork.chats')
+angular.module('lyre.chats')
   .factory('appChats', ['$resource',
     function($resource) {
       return {
@@ -20,4 +20,3 @@ angular.module('atwork.chats')
     }
   ])
   ;
-  

@@ -1,5 +1,5 @@
 'use strict';
-angular.module('atwork.notifications', ['atwork.system'])
+angular.module('lyre.notifications', ['lyre.system'])
 .run([
   '$rootScope',
 	'appLocation',

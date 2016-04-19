@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('atwork.posts')
+angular.module('lyre.posts')
   .factory('appPosts', ['$resource',
     function($resource) {
       return {
@@ -43,7 +43,7 @@ angular.module('atwork.posts')
         text = text.replace(mentions, function(mention) {
           return '<a href="/profile/'+ mention.replace('@', '') +'">' + mention + '</a>'
         });
-        
+
         /**
          * Emoticons
          */
@@ -81,7 +81,7 @@ angular.module('atwork.posts')
           var value = emots[i].value;
           text = text.replace(key, emotTemplate.replace('{{emoticon}}', value));
         };
-        
+
         return $sce.trustAsHtml(text);
       };
     }
@@ -137,7 +137,7 @@ angular.module('atwork.posts')
             /**
              * STREAM: If there is a streamId, let's load feeds of the specific stream
              */
-            
+
             /**
              * Show limited comments
              * @type {Boolean}
@@ -184,7 +184,7 @@ angular.module('atwork.posts')
              * Prepare the request
              */
             var timelineData = appPosts.single.get({
-              postId: postId, 
+              postId: postId,
               limitComments: config.limitComments,
               allowMarking: true
             }, function() {
@@ -215,8 +215,8 @@ angular.module('atwork.posts')
              * Prepare the request
              */
             var feedData = appPosts.feed.get({
-              timestamp: config.lastUpdated, 
-              filter: config.feedsFilter, 
+              timestamp: config.lastUpdated,
+              filter: config.feedsFilter,
               limitComments: config.limitComments,
               page: config.feedPage
             }, function() {
@@ -268,7 +268,7 @@ angular.module('atwork.posts')
             /**
              * Like the post
              * @param  {Object} item The item object
-             * @return {Void}      
+             * @return {Void}
              */
             $scope.doLike = function(item) {
               item.liked = true;
@@ -280,7 +280,7 @@ angular.module('atwork.posts')
             /**
              * Unlike the post
              * @param  {Object} item The item object
-             * @return {Void}      
+             * @return {Void}
              */
             $scope.undoLike = function(item) {
               item.liked = false;
@@ -297,7 +297,7 @@ angular.module('atwork.posts')
             $scope.comment = function(isValid, item) {
               if (isValid) {
                 var commentContent = this.content;
-                
+
                 /**
                  * Enable client side comments update for faster response time
                  */
@@ -313,7 +313,7 @@ angular.module('atwork.posts')
                   angular.extend(item, response.res.record);
                   item.commentEnabled = false;
                 });
-                
+
               }
             };
 
@@ -363,4 +363,3 @@ angular.module('atwork.posts')
     }
   ])
   ;
-  

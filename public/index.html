@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="AtWork">
+<html ng-app="Lyre">
     <head>
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="/bower_components/angular-material/angular-material.min.css">
         <link rel="stylesheet" href="/css/main.css">
         <base href="/"></base>
-        <title ng-bind="systemSettings ? systemSettings.workplace : 'AtWork'"></title>
+        <title ng-bind="systemSettings ? systemSettings.workplace : 'Lyre'"></title>
     </head>
     <body layout="row" ng-controller="AppCtrl">
       <!-- new deployment: 25, May, 2015!! -->
@@ -23,11 +23,11 @@
           <button ng-click="toggleSidenav('left')" hide-gt-sm class="menuBtn" ng-if="isLoggedIn">
             <span class="visuallyhidden">Menu</span>
           </button>
-          <h1>{{systemSettings ? systemSettings.workplace : 'AtWork'}}</h1>
+          <h1>{{systemSettings ? systemSettings.workplace : 'Lyre'}}</h1>
         </md-toolbar>
         <div class="md-padding sidebar-list" layout-padding>
             <div ng-include="'/system/public/views/search.html'"></div>
-            
+
             <!-- Load user chats -->
             <div ng-include="'/modules/chats/views/chatsList.html'"></div>
 
@@ -44,11 +44,11 @@
                 <button ng-click="toggleSidenav('left')" hide-gt-sm class="menuBtn" ng-if="isLoggedIn">
                   <span class="visuallyhidden">Menu</span>
                 </button>
-                <!-- <h2 hide-gt-sm flex>{{systemSettings ? systemSettings.workplace : 'AtWork'}}</h2> -->
+                <!-- <h2 hide-gt-sm flex>{{systemSettings ? systemSettings.workplace : 'Lyre'}}</h2> -->
                 <md-button class="md-old-style" ng-if="isLoggedIn" ng-click="goHome($event)" title="Home">
                   <md-inline-list-icon class="fa fa-globe"></md-inline-list-icon>
                 </md-button>
-                <span hide-sm ng-if="!isLoggedIn">{{systemSettings ? systemSettings.workplace : 'AtWork'}}</span>
+                <span hide-sm ng-if="!isLoggedIn">{{systemSettings ? systemSettings.workplace : 'Lyre'}}</span>
                 <span hide-sm hide-md class="tiny" flex>&nbsp; {{barTitle}}</span>
                 <span flex hide-md></span>
                 <md-button class="md-old-style" ng-if="isLoggedIn && (user.roles.indexOf('admin') !== -1)" href="/settings" title="Settings">
@@ -61,7 +61,7 @@
                   <md-button class="md-old-style" ng-if="isLoggedIn" ng-click="showUserNotifications($event)" title="Alerts">
                     <md-inline-list-icon class="fa fa-bell notification-count"> <span ng-if="notificationCount">{{notificationCount}} </span></md-inline-list-icon>
                   </md-button>
-                  
+
                   <div class="notifications md-whiteframe-z1" ng-if="isLoggedIn && notificationShown">
                     <md-list>
                       <!-- notif loop start -->
@@ -102,12 +102,12 @@
 
 
           <div layout="column" flex id="content">
-            
+
             <md-content flex class="md-padding greyed" md-scroll-y>
               <div class="main-view" ng-view layout="row" layout-align="center" layout-fill></div>
             </md-content>
           </div>
-          
+
       </div>
 
       <!-- Main angular file -->
@@ -120,4 +120,3 @@
       <link rel="stylesheet" href="/bower_components/angular-loading-bar/build/loading-bar.min.css">
     </body>
 </html>
-

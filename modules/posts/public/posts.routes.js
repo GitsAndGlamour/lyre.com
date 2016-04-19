@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('atwork.posts')
+angular.module('lyre.posts')
   .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/feed', {

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('atwork.chats')
+angular.module('lyre.chats')
   .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
       ;

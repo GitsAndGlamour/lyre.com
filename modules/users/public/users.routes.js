@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('atwork.users')
+angular.module('lyre.users')
   .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/login', {
@@ -25,7 +25,7 @@ angular.module('atwork.users')
         resolve: {
           profileData: [
             '$route',
-            'appAuth', 
+            'appAuth',
             'appUsers',
             function($route, appAuth, appUsers) {
               var routeParams = $route.current.params;
@@ -57,7 +57,7 @@ angular.module('atwork.users')
         resolve: {
           profileData: [
             '$route',
-            'appAuth', 
+            'appAuth',
             'appUsers',
             function($route, appAuth, appUsers) {
               var routeParams = $route.current.params;

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('atwork.users', ['atwork.system'])
+angular.module('lyre.users', ['lyre.system'])
   .factory('appAuth', [
     '$http',
     'appStorage',

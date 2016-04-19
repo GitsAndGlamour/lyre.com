@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('atwork.streams')
+angular.module('lyre.streams')
   .factory('appStreams', ['$resource',
     function($resource) {
       return {
@@ -20,4 +20,3 @@ angular.module('atwork.streams')
     }
   ])
   ;
-  

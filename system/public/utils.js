@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('atwork.utils', ['ngRoute', 'ngMaterial'])
+angular.module('lyre.utils', ['ngRoute', 'ngMaterial'])
 .factory('appStorage', function() {
   return {
     get: function(item) {
@@ -24,7 +24,7 @@ angular.module('atwork.utils', ['ngRoute', 'ngMaterial'])
   }
 ])
 .factory('appLocation', [
-  '$location', 
+  '$location',
   function($location) {
     return $location;
   }
@@ -114,7 +114,7 @@ angular.module('atwork.utils', ['ngRoute', 'ngMaterial'])
         scope.$watch(model, function(value) {
           if(value === true) {
             $timeout(function() {
-              element[0].focus(); 
+              element[0].focus();
             }, 800);
           }
         });

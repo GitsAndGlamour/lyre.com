@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('atwork.chats')
+angular.module('lyre.chats')
   .controller('ChatsCtrl', [
     '$scope',
     '$rootScope',
@@ -29,7 +29,7 @@ angular.module('atwork.chats')
         })
         appDesktop.notify({messagesCount: messagesCount});
       };
-      
+
       /**
        * Open a new conversation
        * @return {Void}
