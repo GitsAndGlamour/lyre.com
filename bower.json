@@ -1,9 +1,10 @@
 {
-  "name": "atwork",
+  "name": "lyre",
   "main": "index.js",
   "version": "0.0.0",
-  "homepage": "https://github.com/matterial/atwork",
+  "homepage": "https://github.com/gitsandglamour/lyre",
   "authors": [
+    "Omie Walls <orwalls@uwm.edu>",
     "Riten Vagadiya <riten.s.v@gmail.com>"
   ],
   "moduleType": [
