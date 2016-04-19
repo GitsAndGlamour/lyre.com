@@ -1,9 +1,9 @@
 ![travis-build](https://api.travis-ci.org/ritenv/atwork.svg)
 
-*__    _  _  ____  ____
-*(  )  ( \/ )(  _ \(  __)
-*/ (_/\ )  /  )   / ) _)
-*\____/(__/  (__\_)(____)
+    __    _  _  ____  ____
+    (  )  ( \/ )(  _ \(  __)
+    / (_/\ )  /  )   / ) _)
+    \____/(__/  (__\_)(____)
 
 **Project Lyre** is an open-source social network for discovering new online courses across the web.
 (Under development) The foundation of the website is built upon an existing social network that exists as a customizable workplace communication web application.
